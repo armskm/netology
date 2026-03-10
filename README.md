@@ -1,1 +1,1 @@
-# netology
+# Выполнение домашних заданий по курсу DevOps от Netology
