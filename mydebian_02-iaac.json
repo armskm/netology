@@ -1,0 +1,36 @@
+{
+    "builders": [
+        {
+            "type": "yandex",
+            "token": "xxxxxxxxxx",
+            "folder_id": "xxxxxxx",
+            "zone": "ru-central1-b",
+            "image_name": "debian-12-docker",
+            "image_description": "my custom debian with docker",
+            "source_image_family": "debian-12",
+            "subnet_id": "xxxxxxxxxx",
+            "use_ipv4_nat": true,
+            "disk_type": "network-hdd",
+            "ssh_username": "debian"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "inline": [
+                "echo 'update APT'",
+                "sudo apt update",
+                "echo 'Install GPG'",
+                "sudo apt install -y gpg",
+                "echo 'Install Docker'",
+                "curl --fail --silent --show-error --location https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-keyring.gpg",
+                "echo \"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable\" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null",
+                "sudo apt update",
+                "sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin",
+                "sudo docker run hello-world",
+                "echo 'install htop and tmux'",
+                "sudo apt install -y htop tmux"
+            ]
+        }
+    ]
+}
