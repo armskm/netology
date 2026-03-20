@@ -23,3 +23,5 @@
 ![z3 3](https://github.com/user-attachments/assets/f617550c-671a-44f6-878d-b17b0b755f37)
 
 ## Задача 4
+
+![z4](https://github.com/user-attachments/assets/159fb5af-25ed-4026-a32b-0efe3e235ada)
