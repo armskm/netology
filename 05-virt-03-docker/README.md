@@ -25,3 +25,15 @@
 ## Задача 4
 
 ![z4](https://github.com/user-attachments/assets/159fb5af-25ed-4026-a32b-0efe3e235ada)
+
+## Задача 5
+
+1. И выполните команду "docker compose up -d". Какой из файлов был запущен и почему?
+
+   Ответ: Был запущен compose.yaml, т.к. Compose отдает предпочтение каноническому файлу compose.yaml
+
+![z5 1](https://github.com/user-attachments/assets/d5d7a3ed-5b6c-4abe-8fc9-9ce74dfcb7d9)
+
+![z5 2](https://github.com/user-attachments/assets/0b1fa4f9-f15a-477b-85b2-5bd3571f74c5)
+
+![z5](https://github.com/user-attachments/assets/a07f376a-c11c-48b8-95bf-134fdf5bb851)
