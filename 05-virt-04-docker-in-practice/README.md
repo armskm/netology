@@ -19,3 +19,9 @@
 ### Задача 6.1
 
 ![z5 6 1](https://github.com/user-attachments/assets/d54c14b6-c45d-4d73-8b57-006387afb76d)
+
+### Задача 6.2
+
+Решение взято отсюда: https://docs.docker.com/build/building/export/
+
+![z5 6 2](https://github.com/user-attachments/assets/36f2c383-d2f9-44f0-927d-dea27d5abd6e)
