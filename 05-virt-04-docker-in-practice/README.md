@@ -12,6 +12,30 @@
 
 ![task4](https://github.com/user-attachments/assets/8f421acc-ab88-4085-8a98-79d1ab8333e8)
 
+## Задача 5
+
+Скрипт бэкапа:
+
+```
+#!/bin/bash
+
+CARRENT_TIME=$(date +%Y%m%d.%H.%M.%S)
+source /root/netology/task5/shvirtd-example-python/.env
+docker run \
+    --env-file /root/netology/task5/shvirtd-example-python/.env \
+    --rm --entrypoint "" \
+    -v /opt/backup:/backup \
+    --network shvirtd-example-python_backend \
+    schnitzler/mysqldump \
+    mysqldump --opt -h db -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" "--result-file=/backup/dumps_${CARRENT_TIME}.sql" $MYSQL_DATABASE
+```
+
+cron-task:
+
+```*/1 * * * * /bin/bash /root/netology/task5/shvirtd-example-python/backup.sh```
+
+![z5](https://github.com/user-attachments/assets/777ae6eb-3d1d-4d3a-a3a3-d6b82a6d1707)
+
 ## Задача 6
 
 ![z5 6](https://github.com/user-attachments/assets/b0271a6d-8dd9-4f10-8824-c1b0c5d1d3c6)
