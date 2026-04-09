@@ -49,3 +49,7 @@
 
 9. Образ не удалился, потому что в main.tf в описании ресурса "docker_image" указано **keep_locally = true**. В документации указано:
 keep_locally (Boolean) If true, then the Docker image won't be deleted on destroy operation. If this is false, it will delete the image from the docker local storage on destroy operation.
+
+## Задача 2
+
+[**Финальный код main.tf**](https://github.com/armskm/netology/blob/main/ter-homework/01/main.tf)
