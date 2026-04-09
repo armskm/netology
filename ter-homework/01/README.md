@@ -53,3 +53,8 @@ keep_locally (Boolean) If true, then the Docker image won't be deleted on destro
 ## Задача 2
 
 [**Финальный код main.tf**](https://github.com/armskm/netology/blob/main/ter-homework/01/main.tf)
+
+## Задача 3
+
+![ter-01-3-tofu](https://github.com/user-attachments/assets/2bcfeb16-382a-4efa-a7e6-59e19ab87015)
+
