@@ -21,5 +21,8 @@
 
 [**locals.tf**](https://github.com/armskm/netology/blob/main/ter-homework/02/src/locals.tf)
 
+## Задание 6
 
+[**vms_platform.tf**](https://github.com/armskm/netology/blob/main/ter-homework/02/src/vms_platform.tf)
 
+[**main.tf**](https://github.com/armskm/netology/blob/main/ter-homework/02/src/main.tf)
