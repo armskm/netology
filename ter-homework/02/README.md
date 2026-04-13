@@ -17,7 +17,9 @@
 
 ![ter-02-4](https://github.com/user-attachments/assets/543ede6f-caec-4945-9f4a-290b40737108)
 
-## Задание 4
+## Задание 5
+
+[**locals.tf**](https://github.com/armskm/netology/blob/main/ter-homework/02/src/locals.tf)
 
 
 
