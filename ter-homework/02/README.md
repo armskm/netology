@@ -13,3 +13,8 @@
 
 ## Задание 4
 
+Вывод terraform output
+
+![ter-02-4](https://github.com/user-attachments/assets/543ede6f-caec-4945-9f4a-290b40737108)
+
+
