@@ -57,3 +57,25 @@ variable "vm_db_core_fr" {
   type        = number
   default     = 20
 }
+
+## var for locals
+
+variable "edu" {
+  type        = string
+  default     = "netology"
+}
+
+variable "dev" {
+  type        = string
+  default     = "develop-platform"
+}
+
+variable "s1" {
+  type        = string
+  default     = "web"
+}
+
+variable "s2" {
+  type        = string
+  default     = "db"
+}
