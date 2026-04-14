@@ -26,3 +26,20 @@
 [**vms_platform.tf**](https://github.com/armskm/netology/blob/main/ter-homework/02/src/vms_platform.tf)
 
 [**main.tf**](https://github.com/armskm/netology/blob/main/ter-homework/02/src/main.tf)
+
+
+## Задание 7
+
+```terraform console
+> local.test_list[1]
+"staging"
+> local.test_list[2]
+"production"
+> length(local.test_list)
+3
+> local.test_map.admin
+"John"
+> local.test_map["admin"]
+"John"
+> "${local.test_map["admin"]} is ${keys(local.test_map)[0]} for ${local.test_list[2]} server based on OS ${local.servers["production"].image} with ${local.servers["production"].cpu} vcpu, ${local.servers["production"].ram} ram and ${length(local.servers["production"].disks)} virtual disks"
+"John is admin for production server based on OS ubuntu-20-04 with 10 vcpu, 40 ram and 4 virtual disks"```
