@@ -43,3 +43,13 @@
 "John"
 > "${local.test_map["admin"]} is ${keys(local.test_map)[0]} for ${local.test_list[2]} server based on OS ${local.servers["production"].image} with ${local.servers["production"].cpu} vcpu, ${local.servers["production"].ram} ram and ${length(local.servers["production"].disks)} virtual disks"
 "John is admin for production server based on OS ubuntu-20-04 with 10 vcpu, 40 ram and 4 virtual disks"```
+
+## Задание 8
+
+Переменная определена в variables.tf
+
+```
+terraform console
+> var.test[0]["dev1"][0]
+"ssh -o 'StrictHostKeyChecking=no' ubuntu@62.84.124.117"
+```
