@@ -21,7 +21,7 @@
 <img width="642" height="287" alt="ter-03-4" src="https://github.com/user-attachments/assets/dbbd5d4c-72df-4ef9-a532-74cbce8e8487" />.
 
 
-В коммит попало только три файла, остальное попало в ветку terraform-03 из main (поздно увидел в задание пункт про ветку)
+В коммит попало только три файла, остальное попало в ветку terraform-03 из main (поздно увидел в задании 4 пункт про ветку))
 
 [Ссылка на коммит](https://github.com/armskm/netology/commit/1cefa018b9fc8ad8a5eb509375f09d5e7c32abec)
 
