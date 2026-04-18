@@ -25,5 +25,8 @@
 
 [Ссылка на коммит](https://github.com/armskm/netology/commit/1cefa018b9fc8ad8a5eb509375f09d5e7c32abec)
 
+## Задание 5
+
+<img width="491" height="363" alt="ter-03-5" src="https://github.com/user-attachments/assets/372440b2-c13d-4c21-973f-f0e6b8189fbf" />
 
 
