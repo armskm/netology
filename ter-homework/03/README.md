@@ -34,3 +34,34 @@
 Код в ветке terraform-03
 
 Решение в исправленных файлах [**ansible.tf**](https://github.com/armskm/netology/blob/terraform-03/ter-homework/03/src/ansible.tf), [**hosts.tftpl**](https://github.com/armskm/netology/blob/terraform-03/ter-homework/03/src/hosts.tftpl), [**test.yml**](https://github.com/armskm/netology/blob/terraform-03/ter-homework/03/src/test.yml)
+
+## Задание 8
+
+Идентифицируйте и устраните намеренно допущенную в tpl-шаблоне ошибку. Обратите внимание, что terraform сам сообщит на какой строке и в какой позиции ошибка!
+```
+[webservers]
+%{~ for i in webservers ~}
+${i["name"]} ansible_host=${i["network_interface"][0]["nat_ip_address"] platform_id=${i["platform_id "]}}
+%{~ endfor ~}
+```
+
+Не нужен пробел после platform_id и фигурная скобка стоит не в том месте. Вот исправленный код:
+```
+${i["name"]} ansible_host=${i["network_interface"][0]["nat_ip_address"]} platform_id=${i["platform_id"]}
+```
+
+## Задание 9
+
+Напишите  terraform выражения, которые сформируют списки:
+1. ["rc01","rc02","rc03","rc04",rc05","rc06",rc07","rc08","rc09","rc10....."rc99"] те список от "rc01" до "rc99"
+2. ["rc01","rc02","rc03","rc04",rc05","rc06","rc11","rc12","rc13","rc14",rc15","rc16","rc19"....."rc96"] те список от "rc01" до "rc96", пропуская все номера, заканчивающиеся на "0","7", "8", "9", за исключением "rc19"
+
+1. [for i in range(1, 100) : format("rc%02d", i)]
+2. 
+```
+[
+  for i in range(1, 97) : 
+  format("rc%02d", i)
+  if i % 10 != 0 && i % 10 != 7 && i % 10 != 8 && i % 10 != 9 || i == 19
+]
+```
