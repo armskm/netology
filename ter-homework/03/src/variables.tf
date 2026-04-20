@@ -92,6 +92,7 @@ variable "each_vm" {
 
 locals {
   public_key = file("/root/.ssh/id_rsa.pub")
+  private_key = file("/root/.ssh/id_rsa")
 }
 
 ### vars for task 3
