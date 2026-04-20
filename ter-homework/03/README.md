@@ -28,3 +28,9 @@
 ## Задание 5
 
 <img width="491" height="363" alt="ter-03-5" src="https://github.com/user-attachments/assets/372440b2-c13d-4c21-973f-f0e6b8189fbf" />
+
+## Задание 6
+
+Код в ветке terraform-03
+
+Решение в исправленных файлах [**ansible.tf**](https://github.com/armskm/netology/blob/terraform-03/ter-homework/03/src/ansible.tf), [**hosts.tftpl**](https://github.com/armskm/netology/blob/terraform-03/ter-homework/03/src/hosts.tftpl), [**test.yml**](https://github.com/armskm/netology/blob/terraform-03/ter-homework/03/src/test.yml)
