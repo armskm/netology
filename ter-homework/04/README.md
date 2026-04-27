@@ -18,6 +18,7 @@
 
 <img width="604" height="722" alt="ter-04-23" src="https://github.com/user-attachments/assets/39b81544-83d5-465a-a7a3-e895133653b4" />
 .
+
 5. [Readme with terraform docs](https://github.com/armskm/netology/blob/terraform-04/ter-homework/04/src/vpc/README.md)
 
 
