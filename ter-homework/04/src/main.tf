@@ -1,30 +1,43 @@
 #создаем облачную сеть
-resource "yandex_vpc_network" "develop" {
-  name = var.vpc_name
-}
+# resource "yandex_vpc_network" "develop" {
+#   name = var.vpc_name
+# }
 
 #создаем подсеть
-resource "yandex_vpc_subnet" "develop_a" {
-  name           = var.develop_a
-  zone           = var.develop_a_zone
-  network_id     = yandex_vpc_network.develop.id
-  v4_cidr_blocks = var.develop_a_cidr
+# resource "yandex_vpc_subnet" "develop_a" {
+#   name           = var.develop_a
+#   zone           = var.develop_a_zone
+#   network_id     = yandex_vpc_network.develop.id
+#   v4_cidr_blocks = var.develop_a_cidr
+# }
+
+# resource "yandex_vpc_subnet" "develop_b" {
+#   name           = var.develop_b
+#   zone           = var.develop_b_zone
+#   network_id     = yandex_vpc_network.develop.id
+#   v4_cidr_blocks = var.develop_b_cidr
+# }
+
+module "vpc_dev_a" {
+  source   = "./vpc"
+  env_name = var.vpc_name
+  zone     = var.develop_a_zone
+  cidr     = var.develop_a_cidr[0]  # Получаем строку из списка
 }
 
-resource "yandex_vpc_subnet" "develop_b" {
-  name           = var.develop_b
-  zone           = var.develop_b_zone
-  network_id     = yandex_vpc_network.develop.id
-  v4_cidr_blocks = var.develop_b_cidr
+module "vpc_dev_b" {
+  source   = "./vpc"
+  env_name = var.vpc_name_b
+  zone     = var.develop_b_zone
+  cidr     = var.develop_b_cidr[0]
 }
-
 
 module "marketing_vm" {
   source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
   env_name       = var.marketing_env 
-  network_id     = yandex_vpc_network.develop.id
+  network_id     = module.vpc_dev_a.subnet_info.network_id
   subnet_zones   = [var.develop_a_zone]
-  subnet_ids     = [yandex_vpc_subnet.develop_a.id]
+  subnet_ids     = [module.vpc_dev_a.subnet_info.id]
   instance_name  = var.marketing
   instance_count = 1
   image_family   = var.vm_web_os
@@ -44,9 +57,9 @@ module "marketing_vm" {
 module "analytics_vm" {
   source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
   env_name       = var.analytics_env
-  network_id     = yandex_vpc_network.develop.id
+  network_id     = module.vpc_dev_b.subnet_info.network_id
   subnet_zones   = [var.develop_b_zone]
-  subnet_ids     = [yandex_vpc_subnet.develop_b.id]
+  subnet_ids     = [module.vpc_dev_b.subnet_info.id]
   instance_name  = var.analytics
   instance_count = 1
   image_family   = var.vm_web_os

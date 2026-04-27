@@ -45,6 +45,12 @@ variable "vpc_name" {
   description = "VPC network&subnet name"
 }
 
+variable "vpc_name_b" {
+  type        = string
+  default     = "develop_b"
+  description = "VPC network&subnet name"
+}
+
 variable "develop_a" {
   type        = string
   default     = "develop-ru-central1-a"
