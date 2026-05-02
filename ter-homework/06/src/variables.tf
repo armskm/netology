@@ -93,7 +93,7 @@ variable "security_group_egress" {
 
 variable "vm_web_os" {
   type        = string
-  default     = "ubuntu-2004-lts"
+  default     = "ubuntu-2204-lts"
 }
 
 variable "vm_web_platform" {
@@ -131,12 +131,6 @@ variable "vm_web" {
 locals {
   public_key = file("/root/.ssh/id_rsa.pub")
 }
-
-variable "public_key" {
-  type    = string
-  default = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMIsIQmdqEbYmORtzxErWWcyvPsXTPpIKR4FAMdymIrG root@deb12"
-}
-
 
 ###vars for mysql
 

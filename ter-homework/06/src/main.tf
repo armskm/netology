@@ -36,8 +36,8 @@ resource "yandex_compute_instance" "web" {
 
   metadata = {
     user-data          = data.template_file.cloudinit.rendered
-    serial-port-enable = 1
-    #ssh-keys = "ubuntu:${local.public_key}"
+    #serial-port-enable = 1
+    ssh-keys = "ubuntu:${local.public_key}"
   }
 
   scheduling_policy { preemptible = var.vm_preemptible }
@@ -51,7 +51,4 @@ resource "yandex_compute_instance" "web" {
 
 data "template_file" "cloudinit" {
   template = file("./cloud-init.yml")
-  vars = {
-    ssh_public_key = var.public_key
-  }
 }
