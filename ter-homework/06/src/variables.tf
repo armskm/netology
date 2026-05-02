@@ -132,6 +132,11 @@ locals {
   public_key = file("/root/.ssh/id_rsa.pub")
 }
 
+variable "public_key" {
+  type    = string
+  default = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMIsIQmdqEbYmORtzxErWWcyvPsXTPpIKR4FAMdymIrG root@deb12"
+}
+
 
 ###vars for mysql
 
