@@ -131,3 +131,46 @@ variable "vm_web" {
 locals {
   public_key = file("/root/.ssh/id_rsa.pub")
 }
+
+
+###vars for mysql
+
+variable "mysql_cl" {
+  type = list(object({
+    name           = string
+    environment    = string
+    version        = string
+    preset         = string
+    disk_type      = string
+    disk_size      = number
+  }))
+  default = [
+    {
+      name          = "clusterdb"
+      environment   = "PRESTABLE"
+      version       = "8.0"
+      preset        = "b2.medium"
+      disk_type     = "network-hdd"
+      disk_size     = 10
+    }
+  ]
+}
+
+variable "name_db" {
+  type        = string
+}
+
+variable "user_db" {
+  type        = string
+}
+
+variable "user_pass" {
+  type        = string
+}
+
+###vars for registry
+
+variable "registry_name" {
+  type        = string
+  default     = "my-registry"
+}
