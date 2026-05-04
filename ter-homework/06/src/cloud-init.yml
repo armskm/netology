@@ -1,4 +1,11 @@
 #cloud-config
+write_files:
+  - path: /root/.env
+    content: |
+      DB_HOST=${db_host}
+      DB_USER=${db_user}
+      DB_PASSWORD=${db_pass}
+      DB_NAME=${db_name}
 package_update: true
 package_upgrade: false
 packages:

@@ -51,4 +51,10 @@ resource "yandex_compute_instance" "web" {
 
 data "template_file" "cloudinit" {
   template = file("./cloud-init.yml")
+  vars = {
+    db_host = yandex_mdb_mysql_cluster.my_cluster.host[0].fqdn
+    db_user = var.user_db
+    db_pass = var.user_pass
+    db_name = var.name_db
+  }
 }
