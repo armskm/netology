@@ -14,7 +14,7 @@ data "yandex_compute_image" "ubuntu" {
 
 #создаем web ВМ
 resource "yandex_compute_instance" "web" {
-  #depends_on = [yandex_compute_instance.db]
+  depends_on = [yandex_mdb_mysql_cluster.my_cluster]
 
   count = 1
 
