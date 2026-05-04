@@ -13,14 +13,14 @@ x-deploy: &deploy-dev
         memory: 256M
 x-env_file: &env_file
   env_file:
-    - .env
+    - /root/.env
 x-restart: &restart
   restart: on-failure
 
 services:
 
   web:
-    image: cr.yandex/crpkrojpeh4sbv3fndqv/python.task5:1.0
+    image: cr.yandex/crpot1igreghat8sokkr/my-app:1.0.0
     networks:
       backend:
         ipv4_address: 172.20.0.5
