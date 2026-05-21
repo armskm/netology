@@ -68,7 +68,7 @@ variable "vm_par" {
   ]
 }
 
-variable "vm_name" {
+variable "vm_n" {
   type = list(object({  vm_name=string }))
   default = [
     {

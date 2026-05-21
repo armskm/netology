@@ -14,7 +14,7 @@ data "yandex_compute_image" "debian" {
 
 #создаем 3 ВМ
 resource "yandex_compute_instance" "vm" {
-    for_each = { for vm in var.each_vm : vm.vm_name => vm }
+    for_each = { for vm in var.vm_n : vm.vm_name => vm }
   
   name        = each.value.vm_name
   hostname    = each.value.vm_name
